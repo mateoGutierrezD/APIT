@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LoginStudentRepository extends MongoRepository<Student, String > {
+public interface StudentRepository extends MongoRepository<Student, String > {
 
-    public Student findByEmailAndPassword(String email, String password);
+    Student findByEmail(String email);
 }

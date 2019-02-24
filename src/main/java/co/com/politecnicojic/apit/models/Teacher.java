@@ -12,7 +12,7 @@ public class Teacher {
     private String documentNumber;
     private String name;
     private String lastName;
-    private String program;
+    private String faculty;
     private String email;
     private String password;
     private String token;
@@ -21,16 +21,20 @@ public class Teacher {
     private boolean isFullTime;
     private String subject;
 
+
+
+    private String cvUrl;
+
     public Teacher() {
     }
 
-    public Teacher(String id, String documentType, String documentNumber, String name, String lastName, String program, String email, String password, String token, String phone, boolean isCathedra, boolean isFullTime, String subject) {
+    public Teacher(String id, String documentType, String documentNumber, String name, String lastName, String faculty, String email, String password, String token, String phone, boolean isCathedra, boolean isFullTime, String subject, String cvUrl) {
         this.id = id;
         this.documentType = documentType;
         this.documentNumber = documentNumber;
         this.name = name;
         this.lastName = lastName;
-        this.program = program;
+        this.faculty = faculty;
         this.email = email;
         this.password = password;
         this.token = token;
@@ -38,6 +42,7 @@ public class Teacher {
         this.isCathedra = isCathedra;
         this.isFullTime = isFullTime;
         this.subject = subject;
+        this.cvUrl = cvUrl;
     }
 
     public String getId() {
@@ -80,12 +85,12 @@ public class Teacher {
         this.lastName = lastName;
     }
 
-    public String getProgram() {
-        return program;
+    public String getFaculty() {
+        return faculty;
     }
 
-    public void setProgram(String program) {
-        this.program = program;
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
     }
 
     public String getEmail() {
@@ -142,5 +147,13 @@ public class Teacher {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getCvUrl() {
+        return cvUrl;
+    }
+
+    public void setCvUrl(String cvUrl) {
+        this.cvUrl = cvUrl;
     }
 }
