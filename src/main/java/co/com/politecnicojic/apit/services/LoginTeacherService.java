@@ -4,7 +4,7 @@ import co.com.politecnicojic.apit.Base.Constants;
 import co.com.politecnicojic.apit.exceptions.EmailIncorrect;
 import co.com.politecnicojic.apit.exceptions.GeneralException;
 import co.com.politecnicojic.apit.exceptions.PasswordIncorrect;
-import co.com.politecnicojic.apit.models.ResponseController;
+import co.com.politecnicojic.apit.models.ResponseObject;
 import co.com.politecnicojic.apit.models.Teacher;
 import co.com.politecnicojic.apit.repositories.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class LoginTeacherService {
     TeacherRepository teacherRepository;
 
 
-    public ResponseController<Teacher> loginTeacher(String email, String password) throws GeneralException {
+    public ResponseObject<Teacher> loginTeacher(String email, String password) throws GeneralException {
         Teacher teacher = teacherRepository.findByEmail(email);
 
         if (teacher == null) {
@@ -28,6 +28,6 @@ public class LoginTeacherService {
             throw new PasswordIncorrect();
         }
 
-        return new ResponseController<Teacher>(Constants.LOGIN_SUCCESSFUL, teacher);
+        return new ResponseObject<Teacher>(true, "200", Constants.LOGIN_SUCCESSFUL, teacher);
     }
 }

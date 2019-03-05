@@ -12,7 +12,6 @@ public class Teacher {
     private String documentNumber;
     private String name;
     private String lastName;
-    private String faculty;
     private String email;
     private String password;
     private String token;
@@ -20,9 +19,6 @@ public class Teacher {
     private boolean isCathedra;
     private boolean isFullTime;
     private String subject;
-
-
-
     private String cvUrl;
 
     public Teacher() {
@@ -34,7 +30,6 @@ public class Teacher {
         this.documentNumber = documentNumber;
         this.name = name;
         this.lastName = lastName;
-        this.faculty = faculty;
         this.email = email;
         this.password = password;
         this.token = token;
@@ -83,14 +78,6 @@ public class Teacher {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
     }
 
     public String getEmail() {

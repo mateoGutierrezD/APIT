@@ -1,7 +1,7 @@
 package co.com.politecnicojic.apit.controllers;
 
 import co.com.politecnicojic.apit.exceptions.GeneralException;
-import co.com.politecnicojic.apit.models.ResponseController;
+import co.com.politecnicojic.apit.models.ResponseObject;
 import co.com.politecnicojic.apit.models.Student;
 import co.com.politecnicojic.apit.models.Teacher;
 import co.com.politecnicojic.apit.models.User;
@@ -24,12 +24,12 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login/student", method= RequestMethod.POST)
-    public ResponseController<Student> loginStudent(@RequestBody User user) throws GeneralException {
+    public ResponseObject<Student> loginStudent(@RequestBody User user) throws GeneralException {
         return loginStudentService.loginStudent(user.getEmail(), user.getPassword());
     }
 
     @RequestMapping(value = "/login/teacher", method= RequestMethod.POST)
-    public ResponseController<Teacher> loginTeacher(@RequestBody User user) throws GeneralException {
+    public ResponseObject<Teacher> loginTeacher(@RequestBody User user) throws GeneralException {
         return loginTeacherService.loginTeacher(user.getEmail(), user.getPassword());
     }
 }

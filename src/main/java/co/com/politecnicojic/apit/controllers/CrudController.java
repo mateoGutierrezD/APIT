@@ -1,6 +1,6 @@
 package co.com.politecnicojic.apit.controllers;
 
-import co.com.politecnicojic.apit.models.ResponseController;
+import co.com.politecnicojic.apit.models.ResponseObject;
 import co.com.politecnicojic.apit.models.Student;
 import co.com.politecnicojic.apit.models.Teacher;
 import co.com.politecnicojic.apit.services.CrudService;
@@ -19,12 +19,12 @@ public class CrudController {
     }
 
     @RequestMapping(value = "/register/student", method= RequestMethod.POST)
-    public ResponseController<Student> insertStudent(@RequestBody Student student) {
-        return crudService.registerStundent(student);
+    public ResponseObject<Student> insertStudent(@RequestBody Student student) {
+        return crudService.registerStudent(student);
     }
 
     @RequestMapping(value = "/register/teacher", method=RequestMethod.POST)
-    public ResponseController<Teacher> insertTeacher(@RequestBody Teacher teacher) {
+    public ResponseObject<Teacher> insertTeacher(@RequestBody Teacher teacher) {
         return crudService.registerTeacher(teacher);
     }
 }
